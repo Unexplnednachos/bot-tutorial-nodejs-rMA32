@@ -16,7 +16,7 @@ function respond() {
       siege1 = 'https://i.groupme.com/350x419.png.adc8c73a6c1547e0a9e04320296329f8'; siege2 = 'https://i.groupme.com/1279x752.jpeg.aa5d0401e0df495bba4b4e09dc5a6bd7'
       siege3 = 'https://i.groupme.com/960x960.png.006e180e05d841c6a2962e844bf1e6fd';
   var teamAb = ["NE","NO","ARI","PHI","CLE","TEN","OAK","DAL","IND","SEA","CIN","PIT","JAC"
-                ,"BAL","SD","DEN","MIN","ATL","KC","NYG","GB","DET","HOU","STL","CHI","CAR",
+                ,"BAL","LAC","DEN","MIN","ATL","KC","NYG","GB","DET","HOU","LAR","CHI","CAR",
                 "MIA","BUF","SF","WAS","NYJ","TB"]
   if(request.text && botRegex.test(request.text)) {
     this.res.writeHead(200);
@@ -71,7 +71,7 @@ function respond() {
   else if(request.text && botRegexDL.test(request.text)) {
     this.res.writeHead(200);
     //postMessage("http://www.daddyleagues.com/maddenrating?name=&position=all&team="+request.text.substring(5,8));
-    postMessage("http://daddyleagues.com/nml18/team/"+request.text.substring(5,8)+"/depthchart");
+    postMessage("http://daddyleagues.com/rfd/team/"+request.text.substring(5,8)+"/depthchart");
     this.res.end();
   } 
   
@@ -92,7 +92,7 @@ function respond() {
   }
   else if(request.text && botRegexRules.test(request.text)) {
     this.res.writeHead(200);
-    postMessage("https://docs.google.com/document/d/1hSuEG7oplnx4IX6HGsMOjsWb9TCqC4-F1NLjuBz5PCM/edit");
+    postMessage("https://docs.google.com/document/d/1SQQim9SB59EanjvavHD5CMhqz5hynSVsVDc6TODmJFI/edit?usp=sharing");
     this.res.end();
   } 
   else if(request.text && botRegexGTA.test(request.text)) {
@@ -103,14 +103,14 @@ function respond() {
   else if(request.text && botRegexSC.test(request.text)) {
     this.res.writeHead(200);
     
-    postMessage("http://daddyleagues.com/nml18/team/"+request.text.substring(5,8)+"/schedule");
+    postMessage("http://daddyleagues.com/rfd/team/"+request.text.substring(5,8)+"/schedule");
     this.res.end();
   }
   else if(request.text && botRegexP.test(request.text)) {
     this.res.writeHead(200);
     var req = request.text.substring(5,request.text.length);
     var rep = req.replace(/ /,"+");
-    postMessage("http://daddyleagues.com/nml18/players?name="+rep+"&position=all&team=all");
+    postMessage("http://daddyleagues.com/rfd/players?name="+rep+"&position=all&team=all");
     
     this.res.end();
   }  
@@ -120,20 +120,12 @@ function respond() {
     postMessage("http://www.twitch.tv/"+request.text.substring(8,request.text.length));
     this.res.end();
   } 
-  else if(request.text && botRegexSb.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("https://www.reddit.com/r/TheNiceMaddenLeague/");
-    this.res.end();
-  } 
+   
   else if(request.text && botRegexSh.test(request.text)) {
     this.res.writeHead(200);
     postMessage("¯\\_(ツ)_/¯");
     this.res.end();
-  } 
-  else if(request.text && botRegexWk.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("https://docs.google.com/spreadsheets/d/1zRLaUZ12vUOORFdNQbPCzJW5T0zFBrkth_osH9b7d34/edit?usp=drivesdk");
-    this.res.end();
+ 
   } 
   else if(request.text && botRegexMason.test(request.text)) {
     this.res.writeHead(200);
@@ -149,17 +141,9 @@ function respond() {
     this.res.writeHead(200);
     postMessage("https://i.groupme.com/851x1184.jpeg.330228901f684b0cb46cd1cef6953923");
     this.res.end();
+  
   }
-  else if(request.text && botRegexMA32.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("https://docs.google.com/spreadsheets/d/12hVrn7ShR3An6bP5uBF3gaoTQQgVciC-0RqtWVZ39Ls/edit?usp=sharing");
-    this.res.end();
-  }
-  else if(request.text && botRegexTrade.test(request.text)) {
-    this.res.writeHead(200);
-    postMessage("https://docs.google.com/forms/d/e/1FAIpQLSdrbe5iBRaBC7EWoodVm8z6285-dG2EdHXAOMOgz8md8T1jwQ/viewform");
-    this.res.end();
-  }
+
   
   else if(request.text && botRegexSiege.test(request.text)) {
     this.res.writeHead(200);
